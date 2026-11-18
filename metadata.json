@@ -1,0 +1,6 @@
+{
+  "name": "English Game Show: Global Journalism",
+  "description": "Offline single-file interactive classroom game show for Global Journalism with Trivia, Flashcards Swipe, Data Tables, and News Framing modes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
