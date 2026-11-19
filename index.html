@@ -1014,21 +1014,18 @@
 
       .framing-image-wrap {
         width: 100%;
-        aspect-ratio: 16 / 9;
-        max-height: min(390px, 44dvh);
+        height: auto;
         border-radius: var(--radius-image-masks);
         border: var(--border-light);
         overflow: hidden;
-        background-color: var(--color-canvas-white);
-        display: grid;
-        place-items: center;
+        background-color: var(--color-absolute-white);
+        display: block;
         position: relative;
       }
 
       .framing-image-wrap img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
       }
 
@@ -1148,10 +1145,6 @@
         .framing-media-card,
         .framing-footer {
           width: min(940px, 100%);
-        }
-
-        .framing-image-wrap {
-          max-height: min(440px, 45dvh);
         }
       }
 
@@ -1761,85 +1754,85 @@
 
         framing: [
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_1_2d13e9b2.png",
+            alt: "CNBC Africa article screenshot: EMERGING MARKETS-S.African rand weakens on stimulus nerves; IMF forecast lifts lira",
             headline: "EMERGING MARKETS-S.African rand weakens on stimulus nerves; IMF forecast lifts lira",
             url: "https://www.cnbcafrica.com/2021/emerging-markets-s-african-rand-weakens-on-stimulus-nerves-imf-forecast-lifts-lira",
             correctTag: "Economic"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_2_f7defac6.png",
+            alt: "Al Jazeera article screenshot: Officials at UN Security Council push for a permanent seat for Africa",
             headline: "Officials at UN Security Council push for a permanent seat for Africa",
             url: "https://www.aljazeera.com/news/2024/8/12/officials-at-un-security-council-push-for-a-permanent-seat-for-africa",
             correctTag: "Responsibility"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_3_b7749055.png",
+            alt: "AP News article screenshot: GOP backs Trump, escalates dark rhetoric after FBI search",
             headline: "GOP backs Trump, escalates dark rhetoric after FBI search",
             url: "https://apnews.com/article/2022-midterm-elections-steve-bannon-presidential-mar-a-lago-biden-cabinet-c147d730769765d421eb9a9e420555b7",
             correctTag: "Conflict"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_4_3d3cddb5.png",
+            alt: "Axios article screenshot: Trump still defiant after a bruising week",
             headline: "Trump still defiant after a bruising week",
             url: "https://www.axios.com/world/2026/11/06",
             correctTag: "Conflict"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_5_825bb4a5.png",
+            alt: "The Verge article screenshot: AI is the new dating dealbreaker",
             headline: "AI is the new dating dealbreaker",
             url: "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
             correctTag: "Human Interest"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_6_461658a2.png",
+            alt: "The Ankler article screenshot: Hollywood's Advancement in the Art of the Layoff Memo",
             headline: "Hollywood's Advancement in the Art of the Layoff Memo",
             url: "https://theankler.com/hollywoods-advancement-in-the-art/",
             correctTag: "Responsibility"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_7_7a546aa3.png",
+            alt: "The Guardian article screenshot: Trump media company drops lawsuit against the Guardian",
             headline: "Trump media company drops lawsuit against the Guardian",
             url: "https://www.theguardian.com/us-news/2026/apr/13/trump-media-guardian-lawsuit",
             correctTag: "Conflict"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_8_df7ca0c5.png",
+            alt: "The Independent article screenshot: Exclusive: Today programme criticised for giving platform to climate sceptic Lord Lawson",
             headline: "Exclusive: Today programme criticised for giving platform to climate sceptic Lord Lawson",
             url: "https://www.independent.co.uk/news/media/tv-radio/exclusive-today-programme-criticised-for-giving-platform-to-climate-sceptic-lord-lawson-9582970.html",
             correctTag: "Responsibility"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_9_59081778.png",
+            alt: "Barn Raiser article screenshot: A Wisconsin Farmer Learns First-Hand the Costs of Trump’s Tariffs",
             headline: "A Wisconsin Farmer Learns First-Hand the Costs of Trump’s Tariffs",
             url: "https://barnraisingmedia.com/farmer-cost-of-trump-tariffs-wisconsin/",
             correctTag: "Economic"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_10_3da2244f.png",
+            alt: "Boeing news release screenshot: Boeing Statement on 737 MAX Software Enhancement",
             headline: "Boeing Statement on 737 MAX Software Enhancement",
             url: "https://boeing.mediaroom.com/news-releases-statements?item=130402",
             correctTag: "Responsibility"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_11_2b34e86b.png",
+            alt: "CBC News article screenshot: BP CEO 'deeply sorry' for Gulf oil spill",
             headline: "BP CEO 'deeply sorry' for Gulf oil spill",
             url: "https://www.cbc.ca/news/world/bp-ceo-deeply-sorry-for-gulf-oil-spill-1.918616",
             correctTag: "Responsibility"
           },
           {
-            image: "./assets/news-placeholder.jpg",
-            alt: "News",
+            image: "./assets/aistudio/News_12_b4adb695.png",
+            alt: "Norfolk Southern statement screenshot: Alan Shaw: We will not walk away, East Palestine",
             headline: "Alan Shaw: We will not walk away, East Palestine",
             url: "https://norfolksouthern.investorroom.com/2023-02-16-Alan-Shaw-We-will-not-walk-away,-East-Palestine",
             correctTag: "Human Interest"
@@ -1873,6 +1866,10 @@
             note: item.note || ""
           };
         });
+      }
+
+      function buildFramingDeck(items = GAME_DATA.framing, rng = Math.random) {
+        return shuffleArray(items, rng);
       }
 
       function scoreVocabTerm(term) {
@@ -2003,6 +2000,18 @@
         return div.innerHTML;
       }
 
+      function attachAssetFallback(imgEl, fallbackContainer) {
+        imgEl.addEventListener("error", () => {
+          const rawSrc = imgEl.getAttribute("src") || "";
+          if (!imgEl.dataset.retriedPublic && /^\.?\/assets\//.test(rawSrc)) {
+            imgEl.dataset.retriedPublic = "1";
+            imgEl.src = rawSrc.replace(/^\.?\/assets\//, "./public/assets/");
+            return;
+          }
+          fallbackContainer.classList.add("is-fallback");
+        });
+      }
+
       /* ==========================================================================
          ROBUST STATE MANAGER & CLEAN EVENT LIFECYCLE
          ========================================================================== */
@@ -2018,6 +2027,7 @@
         state: createGameState(GAME_DATA),
         triviaDeck: buildTriviaDeck(GAME_DATA.trivia),
         flashcardDeck: shuffleArray(GAME_DATA.flashcards),
+        framingDeck: buildFramingDeck(GAME_DATA.framing),
         currentView: "home",
         activeKeyHandler: null,
         activeCleanup: null,
@@ -2140,7 +2150,8 @@
             this.state.tables = randomizeTables(GAME_DATA.tables);
             this.renderTables(true);
           } else if (targetView === "framing") {
-            this.state.framing = { index: 0, revealed: false, total: GAME_DATA.framing.length };
+            this.framingDeck = buildFramingDeck(GAME_DATA.framing);
+            this.state.framing = { index: 0, revealed: false, total: this.framingDeck.length };
             this.renderFraming(true);
           }
         },
@@ -2181,9 +2192,7 @@
           `;
 
           stage.querySelectorAll(".menu-card-media img").forEach((imgEl) => {
-            imgEl.addEventListener("error", () => {
-              imgEl.parentElement.classList.add("is-fallback");
-            });
+            attachAssetFallback(imgEl, imgEl.parentElement);
           });
 
           stage.querySelectorAll("[data-route]").forEach((card) => {
@@ -2581,7 +2590,7 @@
         renderFraming(animateEnter = false) {
           const stage = document.getElementById("stage-main");
           const frState = this.state.framing;
-          const item = GAME_DATA.framing[frState.index];
+          const item = this.framingDeck[frState.index];
           const isFirstStep = frState.index === 0 && !frState.revealed;
           const isLastStep = frState.index === frState.total - 1 && frState.revealed;
 
@@ -2613,7 +2622,7 @@
 
               <div class="framing-media-card">
                 <div id="framing-image-wrap" class="framing-image-wrap">
-                  <img src="./assets/news-placeholder.jpg" alt="News" id="framing-img">
+                  <img src="${escapeHtml(item.image || "./assets/news-placeholder.jpg")}" alt="${escapeHtml(item.alt || "News")}" id="framing-img">
                   <div class="framing-image-fallback">
                     <strong>Editorial Visual Slot</strong>
                     <span>Place your image at <code>./assets/news-placeholder.jpg</code></span>
@@ -2644,15 +2653,7 @@
 
           const imgEl = document.getElementById("framing-img");
           const imgWrap = document.getElementById("framing-image-wrap");
-          if (item.image && item.image !== "./assets/news-placeholder.jpg") {
-            imgEl.src = item.image;
-          }
-          if (item.alt) {
-            imgEl.alt = item.alt;
-          }
-          imgEl.addEventListener("error", () => {
-            imgWrap.classList.add("is-fallback");
-          });
+          attachAssetFallback(imgEl, imgWrap);
 
           const advanceFraming = (dir) => {
             const next = stepFraming(this.state.framing, dir);
@@ -2684,6 +2685,7 @@
         GAME_DATA,
         shuffleArray,
         buildTriviaDeck,
+        buildFramingDeck,
         createGameState,
         stepTrivia,
         swipeFlashcard,

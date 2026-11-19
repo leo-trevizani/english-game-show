@@ -23,12 +23,12 @@ vm.runInContext(scriptMatch[1], sandbox);
 
 const engine = sandbox.window.__GAME_ENGINE__;
 
-test('index.html has zero external CDN links and keeps local news image path', () => {
+test('index.html has zero external CDN links and uses local News_1..News_12 screenshots', () => {
   assert.equal(/<(?:link|script)[^>]+(?:href|src)=["']https?:\/\//i.test(html), false, 'Should not load external CDN scripts or stylesheets');
   assert.equal(/@import\s+url\(["']?https?:\/\//i.test(html), false, 'Should not import external CDN stylesheets');
   assert.ok(
-    html.includes('<img src="./assets/news-placeholder.jpg" alt="News"'),
-    'Game 4 must include <img src="./assets/news-placeholder.jpg" alt="News">'
+    html.includes('id="framing-img"'),
+    'Game 4 must include #framing-img'
   );
 });
 
@@ -165,14 +165,37 @@ test('Guess the Framing contains 12 news cases with valid URLs/tags and transiti
   assert.equal(engine.GAME_DATA.framingTags.length, 5);
   assert.equal(engine.GAME_DATA.framing.length, 12);
 
-  for (const item of engine.GAME_DATA.framing) {
+  engine.GAME_DATA.framing.forEach((item: any, idx: number) => {
     assert.ok(typeof item.headline === 'string' && item.headline.length > 0);
     assert.match(item.url, /^https:\/\//);
+    assert.match(item.image, new RegExp(`^\\./assets/aistudio/News_${idx + 1}_[a-f0-9]+\\.png$`));
+    assert.ok(
+      fs.existsSync(item.image.replace(/^\.\//, 'public/')),
+      `Missing local framing image file: ${item.image}`
+    );
     assert.ok(
       engine.GAME_DATA.framingTags.includes(item.correctTag),
       `Invalid framing tag: ${item.correctTag}`
     );
-  }
+  });
+
+  let seedA = 13;
+  const rngA = () => ((seedA = (seedA * 16807) % 2147483647) / 2147483647);
+  let seedB = 98765;
+  const rngB = () => ((seedB = (seedB * 16807) % 2147483647) / 2147483647);
+
+  const deckA = engine.buildFramingDeck(engine.GAME_DATA.framing, rngA);
+  const deckB = engine.buildFramingDeck(engine.GAME_DATA.framing, rngB);
+  assert.equal(deckA.length, 12);
+  assert.equal(deckB.length, 12);
+  assert.notDeepEqual(
+    deckA.map((c: any) => c.headline),
+    deckB.map((c: any) => c.headline)
+  );
+  assert.notDeepEqual(
+    deckA.map((c: any) => c.headline),
+    engine.GAME_DATA.framing.map((c: any) => c.headline)
+  );
 
   let fr = engine.createGameState().framing;
   assert.equal(fr.index, 0);
