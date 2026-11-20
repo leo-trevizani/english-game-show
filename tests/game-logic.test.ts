@@ -23,13 +23,25 @@ vm.runInContext(scriptMatch[1], sandbox);
 
 const engine = sandbox.window.__GAME_ENGINE__;
 
-test('index.html has zero external CDN links and uses local News_1..News_12 screenshots', () => {
+test('index.html has zero external CDN links and keeps all Home card images locally at root ./assets/', () => {
   assert.equal(/<(?:link|script)[^>]+(?:href|src)=["']https?:\/\//i.test(html), false, 'Should not load external CDN scripts or stylesheets');
   assert.equal(/@import\s+url\(["']?https?:\/\//i.test(html), false, 'Should not import external CDN stylesheets');
   assert.ok(
     html.includes('id="framing-img"'),
     'Game 4 must include #framing-img'
   );
+  assert.equal(
+    html.includes('news-placeholder.jpg'),
+    false,
+    'Should not reference removed news-placeholder.jpg'
+  );
+  for (const card of engine.GAME_DATA.homeCards) {
+    assert.match(card.image, /^\.\/assets\/aistudio\/[a-z0-9-]+_[a-f0-9]+\.png$/i);
+    assert.ok(
+      fs.existsSync(card.image.replace(/^\.\//, '')),
+      `Missing root Home card image file: ${card.image}`
+    );
+  }
 });
 
 test('Trivia contains 11 English questions and buildTriviaDeck shuffles questions and options while preserving correct answers', () => {
@@ -170,8 +182,8 @@ test('Guess the Framing contains 12 news cases with valid URLs/tags and transiti
     assert.match(item.url, /^https:\/\//);
     assert.match(item.image, new RegExp(`^\\./assets/aistudio/News_${idx + 1}_[a-f0-9]+\\.png$`));
     assert.ok(
-      fs.existsSync(item.image.replace(/^\.\//, 'public/')),
-      `Missing local framing image file: ${item.image}`
+      fs.existsSync(item.image.replace(/^\.\//, '')),
+      `Missing root local framing image file: ${item.image}`
     );
     assert.ok(
       engine.GAME_DATA.framingTags.includes(item.correctTag),

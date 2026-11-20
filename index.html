@@ -2622,10 +2622,10 @@
 
               <div class="framing-media-card">
                 <div id="framing-image-wrap" class="framing-image-wrap">
-                  <img src="${escapeHtml(item.image || "./assets/news-placeholder.jpg")}" alt="${escapeHtml(item.alt || "News")}" id="framing-img">
+                  <img src="${escapeHtml(item.image || "")}" alt="${escapeHtml(item.alt || "News")}" id="framing-img">
                   <div class="framing-image-fallback">
                     <strong>Editorial Visual Slot</strong>
-                    <span>Place your image at <code>./assets/news-placeholder.jpg</code></span>
+                    <span>Place your image at <code>${escapeHtml(item.image || "./assets/aistudio/")}</code></span>
                   </div>
                 </div>
                 <div class="framing-caption">

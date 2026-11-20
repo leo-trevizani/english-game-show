@@ -1,4 +1,4 @@
-# Workflow for building and deploying the Vite static site to GitHub Pages
+# Simple workflow for deploying static content directly to GitHub Pages (no build step)
 name: Deploy static content to Pages
 
 on:
@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build Vite bundle (copies public/assets/* into dist/assets/*) and deploy ./dist
+  # Single deploy job since we're deploying pure static HTML + assets directly
   deploy:
     environment:
       name: github-pages
@@ -31,20 +31,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Build production bundle
-        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
