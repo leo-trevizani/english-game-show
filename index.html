@@ -845,18 +845,10 @@
 
       .tables-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
-        gap: var(--space-24);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-64);
         width: 100%;
         align-items: center;
-      }
-
-      .tables-divider {
-        width: 2px;
-        height: 100%;
-        min-height: 360px;
-        background-color: var(--color-vibrant-green);
-        border-radius: 9999px;
       }
 
       .vocab-table-wrap {
@@ -1194,12 +1186,7 @@
       @media (max-width: 1060px) {
         .tables-grid {
           grid-template-columns: 1fr;
-        }
-
-        .tables-divider {
-          width: 100%;
-          height: 2px;
-          min-height: 2px;
+          gap: var(--space-32);
         }
 
         .vocab-table td {
@@ -2565,7 +2552,6 @@
             <section class="view-container tables-view ${animateEnter ? "is-entering" : ""}" aria-label="Write them Right">
               <div class="tables-grid">
                 ${buildVocabGrid(board.left, "Team 1 Vocabulary Grid")}
-                <div class="tables-divider" aria-hidden="true"></div>
                 ${buildVocabGrid(board.right, "Team 2 Vocabulary Grid")}
               </div>
 
